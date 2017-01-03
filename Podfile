@@ -6,7 +6,7 @@ target 'SnapChat' do
   use_frameworks!
 
   # Pods for SnapChat
-  pod 'Firebase/Core'
+  pod 'Firebase'
   pod 'Firebase/Auth'
   pod 'Firebase/Database'
   pod 'Firebase/Storage'
