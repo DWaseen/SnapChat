@@ -51,8 +51,8 @@ class PictureViewController: UIViewController, UIImagePickerControllerDelegate, 
         
         let imageData = UIImageJPEGRepresentation(imageView.image!, 0.1)!
 
-        
-        imagesFolder.child("images.png").put(imageData, metadata: nil, completion: {(metadata, error) in
+
+        imagesFolder.child("\(NSUUID().uuidString).jpg").put(imageData, metadata: nil, completion: {(metadata, error) in
             
             print("We tried to upload")
             
@@ -60,6 +60,7 @@ class PictureViewController: UIViewController, UIImagePickerControllerDelegate, 
                 print("We had an error in images : \(error)")
             }
             else {
+                print(metadata?.downloadURL())
                 self.performSegue(withIdentifier: "selectUserSegue", sender: nil)
             }
         })
